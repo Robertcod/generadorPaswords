@@ -1,0 +1,1048 @@
+/* Estilos generales */
+* {
+    font-family: "Inter", sans-serif; /* Fuente principal */
+    margin: 0; /* Quita márgenes por defecto */
+    padding: 0; /* Quita rellenos por defecto */
+    box-sizing: border-box; /* Asegura que los bordes se incluyan en las dimensiones */
+  }
+  
+  body {
+    padding: 2em 5%; /* Espaciado interno general */
+    font-size: 1rem; /* Tamaño base del texto */
+    min-width: 100vw; /* El ancho mínimo ocupa toda la ventana */
+    min-height: 100vh; /* Asegura que el contenido ocupe toda la altura */
+  }
+  
+  /* Layout principal */
+  .contenido {
+    display: grid; /* Se utiliza un diseño de cuadrícula */
+    grid-template-columns: 1fr 2fr; /* Dos columnas: una más pequeña y otra más grande */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 2rem; /* Espaciado superior */
+  }
+
+  .introduccion {
+    display: grid; /* Diseño de cuadrícula para flexibilidad */
+    justify-content: center; /* Centra el contenido */
+    gap: 1em; /* Espaciado entre los elementos */
+  }
+  
+  .introduccion h3 {
+    font-weight: 400; /* Peso de fuente más delgado */
+    font-size: 1.3rem; /* Tamaño de texto ajustado */
+  }
+  
+  .titulo {
+    text-align: center; /* Centra el texto */
+    font-size: 2rem; /* Tamaño grande para destacar */
+  }
+
+/* Estilos del generador de contraseñas */
+.generador {
+  display: grid; /* Organización flexible en cuadrícula */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  grid-template-rows: 15% 16% 65%; /* Proporciones de las filas */
+  min-height: 60vh; /* Asegura una altura mínima */
+  gap: 1em; /* Espaciado entre elementos */
+}
+
+.nivel {
+    background-color: rgb(255, 143, 199); /* Color de fondo llamativo */
+    text-align: center; /* Texto centrado */
+    border-radius: 0.5em 0.5em 0 0; /* Bordes redondeados en la parte superior */
+    display: flex; /* Para centrar el contenido */
+    place-content: center; /* Centra completamente */
+    font-size: 1.7rem; /* Tamaño del texto */
+    padding: .5em 0;
+  }
+
+/* Imagen dentro de un contenedor */
+figure {
+    height: 65vh; /* Altura relativa al viewport */
+    display: flex; /* Flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente */
+  }
+  
+
+img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(4px 6px 12px rgb(109, 19, 104));
+}
+
+/* Campo de entrada de contraseña */
+.contenedorInput {
+    color: black; /* Color del texto */
+    border: 2px solid; /* Borde visible */
+    border-radius: 3em; /* Bordes redondeados */
+    padding: 0.2em 0.3em 0.2em 0em; /* Espaciado interno */
+    display: grid; /* Diseño de cuadrícula */
+    grid-template-columns: 10fr 1fr 1fr; /* Tres columnas para texto e iconos */
+    height: 4em; /* Altura fija del contenedor */
+  }
+  
+
+.inputContrasena {
+    width: 100%; /* Ocupa todo el espacio disponible */
+    border: none; /* Quita el borde por defecto */
+    font-weight: 400; /* Fuente más ligera */
+    padding-left: 1em; /* Espaciado interno a la izquierda */
+    font-size: 1.2em; /*Tamaño de la fuente*/
+    background-color: transparent; /* Fondo transparente */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.inputContrasena:focus {
+    outline: none; /* Elimina el contorno al enfocarse */
+  }
+/* Estilos de botones */
+
+.icon-btn {
+    background-color: rgb(99, 185, 255); /* Fondo azul claro */
+    border: none; /* Sin bordes */
+    border-radius: 50%; /* Forma circular */
+    width: 4em; /* Tamaño fijo */
+    height: 4em; /* Altura igual al ancho */
+    display: flex; /* Centrado del contenido interno */
+    justify-content: center; 
+    align-items: center;
+    transition: transform 0.1s ease-in-out, background-color 0.3s ease-in-out; /* Efectos suaves */
+  }
+.mensaje-copiado {
+    position: fixed; /* Ubicación fija en la pantalla */
+    top: 20px; /* Distancia desde arriba */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Ajusta el centrado */
+    background-color: #63d4d8; /* Fondo azul verdoso */
+  color: white;
+  padding: 16px; /*espaciado interno de la caja*/
+  border-radius: 4px; /*borde de la caja*/
+  font-size: 17px; /*tamaño de la fuente*/
+  opacity: 0; /* Oculto inicialmente */
+  transition: opacity 0.3s; /* Transición suave para aparecer */
+}
+
+.mensaje-copiado.visible {
+    opacity: 1; /* Se hace visible */
+  }
+  /* Estilos para el mensaje de error */
+.mensaje-error {
+    position: fixed; /* Posiciona el mensaje de error de forma fija en la pantalla */
+    top: 20px; /* Coloca el mensaje a 20 píxeles desde la parte superior */
+    left: 50%; /* Lo centra horizontalmente en la pantalla */
+    transform: translateX(-50%); /* Ajusta la posición horizontal para que quede perfectamente centrado */
+    background-color: #f44336; /* Define el color de fondo rojo para el mensaje de error */
+    color: white; /* Establece el color del texto a blanco */
+    padding: 16px; /* Añade un espacio de 16 píxeles alrededor del contenido dentro del mensaje */
+    border-radius: 4px; /* Redondea ligeramente las esquinas del mensaje */
+    font-size: 17px; /* Establece el tamaño de la fuente del mensaje */
+    opacity: 0; /* Inicialmente el mensaje está invisible (opacidad 0) */
+    transition: opacity 0.3s; /* Añade una transición suave en la opacidad cuando cambia de 0 a 1 */
+  }
+  
+  /* Estilos para hacer el mensaje visible */
+  .mensaje-error.visible {
+    opacity: 1; /* Cuando la clase "visible" se aplica, el mensaje se vuelve visible */
+  }
+  
+  /* Estilos para el botón con icono al ser presionado */
+  .icon-btn:active {
+    transform: scale(0.95); /* Reduce el tamaño del botón cuando es presionado (efecto de "zoom out") */
+  }
+  
+  /* Estilos para los iconos de FontAwesome (tanto sólidos como regulares) */
+  .fa-solid,
+  .fa-regular {
+    font-size: 23px; /* Establece un tamaño de fuente de 23 píxeles para los iconos */
+    margin: 0; /* Elimina cualquier margen alrededor de los iconos */
+    padding: 0; /* Elimina el relleno alrededor de los iconos */
+  }
+  
+  /* Estilos para la sección de personalización */
+  .personalizacion {
+    background-color: rgb(161, 198, 209); /* Establece un fondo azul claro para el contenedor de personalización */
+    height: 100%; /* Hace que el contenedor ocupe el 100% de la altura disponible */
+    border-radius: 0 0 0.5em 0.5em; /* Redondea las esquinas inferiores del contenedor */
+    padding: 1em 3em; /* Añade 1em de espacio en la parte superior e inferior y 3em en los lados */
+  }
+  
+  /* Estilos para el contenido dentro de la personalización */
+  .personalizacionContenido {
+    display: grid; /* Organiza los elementos dentro del contenedor usando el modelo de rejilla (grid) */
+    height: 100%; /* Hace que el contenido ocupe el 100% de la altura del contenedor */
+    width: 100%; /* Hace que el contenido ocupe el 100% del ancho del contenedor */
+  }
+  
+  /* Estilos para los párrafos dentro del contenido de la personalización */
+  .personalizacionContenido p {
+    font-size: 1.3em; /* Establece un tamaño de fuente de 1.3em para los párrafos */
+    font-weight: bold; /* Hace que el texto de los párrafos sea en negrita */
+  }
+  
+  /* Estilos para los subtítulos */
+  .subtitulo {
+    text-align: center; /* Centra el texto del subtítulo */
+    font-size: 1.7rem; /* Establece un tamaño de fuente más grande para el subtítulo */
+    margin-bottom: 0.3em; /* Añade un pequeño margen debajo del subtítulo */
+  }
+  
+  /* Estilos para las opciones y características (con checkbox) */
+  .opciones {
+    display: flex; /* Organiza los elementos dentro de la clase en una fila (flexbox) */
+    align-items: center; /* Centra verticalmente los elementos dentro de la fila */
+  }
+  
+  /* Estilos para los párrafos dentro de las opciones */
+  .opciones p {
+    padding-right: 0.3em; /* Añade un pequeño espacio a la derecha de los párrafos dentro de las opciones */
+  }
+  
+  /* Estilos para los checkboxes dentro de las opciones */
+  .opciones input[type="checkbox"] {
+    width: 2em; /* Define el ancho del checkbox en 2em */
+    height: 2em; /* Define la altura del checkbox en 2em */
+    accent-color: rgb(255, 143, 199); /* Establece un color personalizado para los checkboxes seleccionados (rosado claro) */
+    transition: all 0.3s ease-in-out; /* Añade una transición suave para cualquier cambio de estado del checkbox */
+  }
+  
+
+/* Estilos para la clase 'caracteres' que organiza los elementos en una fila */
+.caracteres {
+    display: flex; /* Utiliza el modelo flexbox para alinear los elementos en una fila */
+    justify-content: space-between; /* Espacia los elementos de manera que el primer y último estén al borde, y el resto distribuidos */
+    width: 100%; /* Establece el ancho del contenedor al 100% del espacio disponible */
+    align-items: center; /* Centra verticalmente los elementos dentro de la fila */
+    gap: 1.2em; /* Añade un espacio de 1.2em entre cada elemento de la fila */
+  }
+  
+  /* Estilos para la clase 'longitud', que usa grid para organizar las columnas */
+  .longitud {
+    display: grid; /* Utiliza el modelo de grid para organizar los elementos en columnas */
+    grid-template-columns: 22.7% 80%; /* Establece dos columnas con un ancho específico, la primera de 22.7% y la segunda de 80% */
+  }
+  
+  /* Estilos para la clase 'caracteristica' que define el ancho de los elementos */
+  .caracteristica {
+    width: 6em; /* Establece el ancho de los elementos dentro de 'caracteristica' a 6em */
+  }
+  
+  /* Estilos para el elemento con id 'nota', que alinea el texto de forma específica */
+  #nota {
+    display: flex; /* Utiliza flexbox para alinear los elementos en una fila */
+    align-items: end; /* Alinea los elementos en la parte inferior del contenedor */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    text-align: center; /* Centra el texto dentro del contenedor */
+    font-size: 0.8em; /* Establece un tamaño de fuente pequeño para el texto */
+  }
+  
+  /* Estilos para el control deslizante (range) */
+  .contenedor-rango {
+    display: flex; /* Organiza los elementos dentro del contenedor con flexbox */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 1rem; /* Añade un espacio de 1rem entre los elementos dentro del contenedor */
+    width: 100%; /* El contenedor ocupa el 100% del espacio disponible */
+    max-width: 500px; /* Establece un ancho máximo de 500px para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+  
+  /* Estilos para el control deslizante en sí (input type range) */
+  #rango-entrada {
+    appearance: none; /* Elimina la apariencia predeterminada del control deslizante */
+    width: 100%; /* El control ocupa todo el ancho disponible dentro de su contenedor */
+    height: 8px; /* Define una altura de 8px para el control deslizante */
+    background: #ddd; /* Establece un fondo gris claro para la pista del control deslizante */
+    border-radius: 5px; /* Redondea las esquinas de la pista del control */
+    outline: none; /* Elimina el borde de enfoque del control deslizante */
+  }
+  
+  /* Estilos para el "thumb" (la parte móvil) del control deslizante */
+  #rango-entrada::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada del "thumb" en WebKit */
+    width: 20px; /* Define el tamaño del "thumb" a 20px */
+    height: 20px; /* Define la altura del "thumb" a 20px */
+    background: #ff8fc7; /* Establece un color de fondo rosado para el "thumb" */
+    border-radius: 50%; /* Hace que el "thumb" tenga forma redonda */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del "thumb" para indicar interactividad */
+  }
+  
+  /* Estilos para la pista del control deslizante en WebKit */
+  #rango-entrada::-webkit-slider-runnable-track {
+    background: #ddd; /* Define el color de fondo de la pista a gris claro */
+    border-radius: 5px; /* Redondea las esquinas de la pista del control */
+  }
+  
+  /* Estilos para la salida del valor del control deslizante */
+  #rango-salida {
+    font-size: 1.7rem; /* Define un tamaño de fuente más grande para el valor de salida */
+    font-weight: bold; /* Establece el texto como negrita */
+    color: #ff8fc7; /* Establece el color del texto a rosado */
+    margin-left: 1rem; /* Añade un pequeño margen a la izquierda del valor */
+    background-color: #ddd; /* Define un color de fondo gris claro para la salida */
+    text-align: center; /* Centra el texto dentro del contenedor de salida */
+    border-radius: 1em; /* Redondea las esquinas del contenedor de salida */
+    width: 5em; /* Define un ancho fijo para el contenedor de salida */
+  }
+  
+  /* Estilos para el botón con icono dentro del contenedor de rango */
+  .contenedor-rango .icon-btn {
+    background-color: #ff8fc7; /* Define un fondo rosado para el botón */
+    border: none; /* Elimina el borde del botón */
+    border-radius: 50%; /* Hace que el botón tenga forma redonda */
+    width: 4em; /* Establece un ancho fijo para el botón */
+    height: 2em; /* Establece una altura fija para el botón */
+    font-size: 1.6rem; /* Define un tamaño de fuente adecuado para el icono dentro del botón */
+    color: white; /* Establece el color del texto o icono dentro del botón como blanco */
+    cursor: pointer; /* Cambia el cursor al pasar por encima del botón para indicar interactividad */
+    display: flex; /* Utiliza flexbox para alinear el contenido dentro del botón */
+    align-items: center; /* Centra verticalmente el contenido dentro del botón */
+    justify-content: center; /* Centra horizontalmente el contenido dentro del botón */
+    transition: background-color 0.3s; /* Añade una transición suave en el cambio de color de fondo */
+  }
+  
+  /* Estilos para cuando el botón es hover (cuando el ratón pasa por encima) */
+  .contenedor-rango button:hover {
+    background-color: #f0638c; /* Cambia el color de fondo a un tono rosado más oscuro al hacer hover */
+  }
+  
+
+/* Animaciones */
+
+/* Animación de pulso que escala el elemento de forma continua */
+@keyframes pulso {
+    0% {
+      transform: scale(1); /* Comienza en tamaño normal */
+    }
+    50% {
+      transform: scale(1.1); /* Aumenta ligeramente el tamaño en un 10% */
+    }
+    100% {
+      transform: scale(1); /* Regresa al tamaño original */
+    }
+  }
+  
+  /* Animación para aparecer con una transición suave */
+  @keyframes aparecer {
+    from {
+      opacity: 0; /* Comienza completamente invisible */
+      transform: translateY(-10px); /* Se desplaza hacia arriba desde 10px */
+    }
+    to {
+      opacity: 1; /* Llega a ser completamente visible */
+      transform: translateY(0); /* Se posiciona en su lugar original */
+    }
+  }
+  
+  /* Animación de deslizamiento de entrada desde arriba */
+  @keyframes deslizarEntrada {
+    from {
+      opacity: 0; /* Comienza invisible */
+      transform: translateY(-50px); /* Comienza desplazado hacia arriba */
+    }
+    to {
+      opacity: 1; /* Llega a ser completamente visible */
+      transform: translateY(0); /* Se desplaza hasta su posición original */
+    }
+  }
+  
+  /* Estilo para el elemento con id 'imagen' que aplica la animación 'deslizarEntrada' */
+  #imagen {
+    animation-duration: 0.5s; /* La animación dura medio segundo */
+    animation-timing-function: ease-out; /* La animación tiene una desaceleración al final */
+  }
+  
+  /* Clase 'deslizarEntrada' que aplica la animación 'deslizarEntrada' */
+  .deslizarEntrada {
+    animation-name: deslizarEntrada;
+  }
+  
+  /* Estilo para el elemento con id 'nivel' con una transición suave en el cambio de color */
+  #nivel {
+    transition: color 0.3s ease-in-out; /* Transición suave del color en 0.3 segundos */
+  }
+  
+  /* Estilos responsivos para pantallas con un ancho entre 791px y 1023px */
+  
+  /* Define un diseño de grid para 'contenido', creando dos columnas */
+  @media (min-width: 791px) and (max-width: 1023px) {
+    .contenido {
+      display: grid; /* Usamos grid para organizar el contenido */
+      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+      gap: 1rem; /* Espacio entre las columnas */
+      align-items: center; /* Alinea los elementos verticalmente al centro */
+    }
+  
+    /* Ajusta el espacio entre los elementos dentro de 'personalizacionContenido' */
+    .personalizacionContenido{
+      gap: .3em;
+    }
+  
+    /* Diseño de grid flexible para 'generador' */
+    .generador {
+      display: grid; /* Utiliza grid para organizar los elementos */
+      grid-template-rows: auto auto 1fr; /* Tres filas, ajustando automáticamente el tamaño según el contenido */
+      grid-template-columns: 1fr; /* Una sola columna para que los elementos sean flexibles */
+      min-height: 50vh; /* Mínimo de 50% de altura de la pantalla */
+      gap: 1em; /* Espacio entre las filas */
+    }
+  
+    /* Ajusta el tamaño máximo de las imágenes para que se adapten al contenedor */
+    img {
+      max-width: 100%; /* Las imágenes ocupan todo el ancho disponible */
+      height: auto; /* Mantienen la proporción */
+    }
+  
+    /* Estilos para el contenedor de la imagen 'figure' */
+    figure {
+      height: 80vh; /* La figura ocupa el 80% de la altura de la ventana */
+      display: flex; /* Utiliza flexbox para centrar el contenido */
+      justify-content: center; /* Centra la imagen horizontalmente */
+    }
+  
+    /* Ajuste dinámico en el tamaño de las columnas de 'generador' */
+    .generador {
+      grid-template-columns: minmax(
+        200px,
+        1fr
+      ); /* Las columnas tienen un tamaño mínimo de 200px */
+    }
+  
+    /* Estilos de 'caracteres' usando grid para dividir en dos columnas */
+    .caracteres {
+      display: grid; /* Organiza los elementos en una cuadrícula */
+      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+      grid-template-rows: auto auto auto; /* Tres filas automáticas */
+      gap: 10px; /* Espacio entre los elementos */
+      width: 100%; /* Ocupa el 100% del ancho disponible */
+    }
+  
+    /* Estilos para los elementos dentro de 'caracteres' con clase 'caracteristica' */
+    .caracteres .caracteristica {
+      grid-column: 1 / -1; /* Hace que 'caracteristica' ocupe toda la columna */
+      font-weight: 400; /* Peso de fuente normal */
+      font-style: italic; /* Estilo de fuente en cursiva */
+      font-size: 1.2em; /* Aumenta el tamaño de la fuente */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Ocupa todo el ancho disponible */
+      margin-bottom: 10px; /* Añade un margen inferior */
+    }
+  
+    /* Estilos para 'opciones' dentro de 'caracteres' */
+    .caracteres .opciones {
+      display: flex; /* Organiza los elementos en una fila */
+      align-items: center; /* Centra verticalmente los elementos */
+      justify-content: space-between; /* Espacia los elementos de manera equidistante */
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo blanco semitransparente */
+      padding: 10px; /* Añade un espacio interno de 10px */
+      border-radius: 8px; /* Bordes redondeados */
+      transition: background-color 0.3s ease; /* Transición suave en el cambio de color de fondo */
+    }
+  
+    /* Ajustes para el texto dentro de 'opciones' */
+    .opciones p {
+      font-size: 1rem; /* Tamaño de fuente normal */
+    }
+  
+    /* Estilos para 'longitud' con la clase 'caracteristica' */
+    .longitud .caracteristica {
+      grid-column: 1 / -1; /* Ocupa toda la columna */
+      font-weight: 400; /* Peso de fuente normal */
+      font-style: italic; /* Estilo en cursiva */
+      font-size: 1.2em; /* Tamaño de fuente aumentado */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Ocupa todo el ancho */
+      margin-bottom: 10px; /* Añade margen inferior */
+    }
+  
+    /* Configuración de una sola columna para 'longitud' */
+    .longitud {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+  
+    /* Estilos para el contenedor del control deslizante (rango) */
+    .contenedor-rango {
+      display: grid; /* Usa grid para organizar los elementos */
+      grid-template-columns: auto 1fr auto; /* Tres columnas de tamaños automáticos */
+      grid-template-rows: auto auto; /* Dos filas automáticas */
+      gap: 10px; /* Espacio entre los elementos */
+      align-items: center; /* Centra verticalmente los elementos */
+      width: 100%; /* Ocupa el 100% del ancho disponible */
+      max-width: 500px; /* Ancho máximo de 500px */
+      margin: 0 auto; /* Centra el contenedor */
+    }
+  
+    /* Estilo para los botones de menos y más */
+    #menos {
+      grid-column: 1; /* Coloca el botón de menos en la primera columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+    }
+  
+    /* Estilos para el control deslizante */
+    #rango-entrada {
+      grid-column: 2; /* Coloca el control deslizante en la segunda columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+      width: 100%; /* Ocupa el 100% del espacio disponible */
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada en Webkit */
+      appearance: none; /* Elimina la apariencia predeterminada */
+      height: 8px; /* Define la altura del control deslizante */
+      background: #ddd; /* Fondo gris claro */
+      border-radius: 5px; /* Bordes redondeados */
+      outline: none; /* Elimina el borde de enfoque */
+    }
+  
+    /* Estilos para el "thumb" del control deslizante en Webkit */
+    #rango-entrada::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada en Webkit */
+      appearance: none; /* Elimina la apariencia predeterminada */
+      width: 20px; /* Define el tamaño del "thumb" */
+      height: 20px; /* Define la altura del "thumb" */
+      background: #ff8fc7; /* Fondo rosado para el "thumb" */
+      border-radius: 50%; /* Hace que el "thumb" sea redondo */
+      cursor: pointer; /* Muestra un cursor de puntero al pasar por encima */
+    }
+  
+    /* Estilos para el "thumb" en Firefox */
+    #rango-entrada::-moz-range-thumb {
+      width: 20px; /* Tamaño del "thumb" */
+      height: 20px; /* Altura del "thumb" */
+      background: #ff8fc7; /* Fondo rosado */
+      border-radius: 50%; /* Hace que el "thumb" sea redondo */
+      cursor: pointer; /* Cursor de puntero */
+      border: none; /* Elimina el borde del "thumb" */
+    }
+  
+    /* Estilo para el botón de más */
+    #mas {
+      grid-column: 3; /* Coloca el botón de más en la tercera columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+    }
+  
+    /* Estilo para el valor del rango (salida) */
+    #rango-salida {
+      grid-column: 1 / -1; /* Hace que ocupe toda la fila */
+      grid-row: 2; /* Lo coloca en la segunda fila */
+      justify-self: center; /* Centra el texto */
+      font-size: 1.7rem; /* Tamaño de fuente grande */
+      font-weight: bold; /* Peso de fuente negrita */
+      color: #ff8fc7; /* Color rosado */
+      background-color: #ddd; /* Fondo gris claro */
+      padding: 5px 15px; /* Espaciado interno */
+      border-radius: 1em; /* Bordes redondeados */
+      text-align: center; /* Centra el texto */
+    }
+  
+    /* Estilo para los botones dentro del contenedor de rango */
+    .contenedor-rango .icon-btn {
+      background-color: #ff8fc7; /* Fondo rosado */
+      border: none; /* Elimina el borde */
+      border-radius: 50%; /* Hace que los botones sean redondos */
+      width: 40px; /* Tamaño del botón */
+      height: 40px; /* Tamaño del botón */
+      font-size: 1.6rem; /* Tamaño de fuente */
+      color: white; /* Texto blanco */
+      cursor: pointer; /* Muestra cursor de puntero */
+      display: flex; /* Flexbox para centrar el icono */
+      align-items: center; /* Centra el contenido verticalmente */
+      justify-content: center; /* Centra el contenido horizontalmente */
+      transition: background-color 0.3s; /* Transición suave al cambiar el color de fondo */
+    }
+  }
+  
+
+  @media (max-width: 790px) {
+    /* Ajustes generales para el body */
+    body {
+      padding: 1em 3%; /* Espaciado general */
+      overflow-x: hidden; /* Evita desplazamiento horizontal */
+    }
+  
+    /* Estilo para la sección 'personalizacionContenido' */
+    .personalizacionContenido {
+      gap: 1em; /* Espacio entre los elementos dentro de 'personalizacionContenido' */
+    }
+  
+    /* Estilo para el contenedor 'generador' */
+    .generador {
+      grid-template-rows: auto; /* Configura las filas para ajustarse al contenido */
+      height: auto; /* La altura es ajustada automáticamente */
+      min-height: unset; /* Elimina la altura mínima fija */
+      gap: 1rem; /* Espacio entre las filas dentro de 'generador' */
+    }
+  
+    /* Estilo para la sección 'contenido' */
+    .contenido {
+      grid-template-columns: 1fr; /* Una sola columna en lugar de múltiples */
+      margin-top: 1rem; /* Espacio superior */
+      gap: 1em;
+    }
+  
+    /* Ajustes para el título de la sección */
+    .titulo {
+      font-size: 1.5rem; /* Tamaño de fuente para títulos */
+      word-wrap: break-word; /* Permite que las palabras largas se rompan */
+      hyphens: auto; /* Habilita la separación de palabras */
+    }
+  
+    /* Estilo para las imágenes dentro del contenedor */
+    img {
+      max-width: 100%; /* Las imágenes no exceden el ancho de su contenedor */
+      height: auto; /* Mantienen la proporción de la imagen */
+    }
+  
+    /* Ajustes en el tamaño de los inputs y botones */
+    .inputContrasena,
+    .icon-btn {
+      font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+  
+    /* Estilos para la sección de personalización */
+    .personalizacion {
+      padding: 0.5em; /* Reduce el espacio interno de 'personalizacion' */
+    }
+  
+    /* Estilos para la sección 'caracteres' */
+    .caracteres {
+      display: grid; /* Usamos grid para la disposición de elementos */
+      grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+      grid-template-rows: auto auto; /* Dos filas automáticas */
+      gap: 10px; /* Espaciado entre los elementos */
+      width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    }
+  
+    /* Estilo para cada característica dentro de 'caracteres' */
+    .caracteres .caracteristica {
+      grid-column: 1 / -1; /* Hace que la característica ocupe toda la fila superior */
+      font-weight: 400; /* Peso de la fuente */
+      font-style: italic; /* Cursiva */
+      font-size: 1.2em; /* Tamaño de fuente más grande */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Asegura que ocupe todo el ancho disponible */
+      margin-bottom: 10px; /* Añade espacio inferior */
+    }
+  
+    /* Estilo para las opciones dentro de 'caracteres' */
+    .caracteres .opciones {
+      display: grid; /* Usa grid para organizar los elementos */
+      grid-template-columns: 1fr; /* Una sola columna para los elementos dentro */
+      grid-template-rows: auto auto; /* Dos filas automáticas */
+      align-items: center; /* Centra los elementos verticalmente */
+      justify-items: center; /* Centra los elementos horizontalmente */
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente */
+      padding: 10px; /* Espaciado interno */
+      border-radius: 8px; /* Bordes redondeados */
+      transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    }
+  
+    /* Estilo para las características en 'longitud' */
+    .longitud .caracteristica {
+      grid-column: 1 / -1; /* La característica ocupa toda la fila */
+      font-weight: 400; /* Peso normal */
+      font-style: italic; /* Cursiva */
+      font-size: 1.2em; /* Tamaño de fuente más grande */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Ocupa todo el ancho */
+      margin-bottom: 10px; /* Espacio inferior */
+    }
+  
+    /* Estilo para la sección 'longitud' */
+    .longitud {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+  
+    /* Estilos para el contenedor del rango (slider) */
+    .contenedor-rango {
+      display: grid; /* Usa grid para organizar los elementos */
+      grid-template-columns: auto 1fr auto; /* Tres columnas automáticas */
+      grid-template-rows: auto auto; /* Dos filas automáticas */
+      gap: 10px; /* Espaciado entre los elementos */
+      align-items: center; /* Alinea los elementos verticalmente */
+      width: 100%; /* Ocupa el 100% del ancho disponible */
+      max-width: 500px; /* Limita el ancho máximo a 500px */
+      margin: 0 auto; /* Centra el contenedor */
+    }
+  
+    /* Estilo para los botones de menos y más en el contenedor de rango */
+    #menos {
+      grid-column: 1; /* Coloca el botón de menos en la primera columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+    }
+  
+    /* Estilos para el control deslizante (rango) */
+    #rango-entrada {
+      grid-column: 2; /* Coloca el control deslizante en la segunda columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+      width: 100%; /* El control deslizante ocupa todo el ancho */
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada en Webkit */
+      appearance: none; /* Elimina la apariencia predeterminada */
+      height: 8px; /* Altura del control deslizante */
+      background: #ddd; /* Fondo gris claro */
+      border-radius: 5px; /* Bordes redondeados */
+      outline: none; /* Elimina el borde de enfoque */
+    }
+  
+    /* Estilos para el "thumb" (pulgar) del control deslizante */
+    #rango-entrada::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada en Webkit */
+      appearance: none; /* Elimina la apariencia predeterminada */
+      width: 20px; /* Tamaño del "thumb" */
+      height: 20px; /* Altura del "thumb" */
+      background: #ff8fc7; /* Fondo rosado */
+      border-radius: 50%; /* Redondea el "thumb" */
+      cursor: pointer; /* Muestra el cursor de puntero */
+    }
+  
+    /* Estilos para el "thumb" en Firefox */
+    #rango-entrada::-moz-range-thumb {
+      width: 20px; /* Tamaño del "thumb" */
+      height: 20px; /* Altura del "thumb" */
+      background: #ff8fc7; /* Fondo rosado */
+      border-radius: 50%; /* Redondea el "thumb" */
+      cursor: pointer; /* Muestra el cursor de puntero */
+      border: none; /* Elimina el borde */
+    }
+  
+    /* Estilo para el botón de más */
+    #mas {
+      grid-column: 3; /* Coloca el botón de más en la tercera columna */
+      grid-row: 1; /* Lo coloca en la primera fila */
+    }
+  
+    /* Estilo para el valor del rango (salida) */
+    #rango-salida {
+      grid-column: 1 / -1; /* Hace que ocupe toda la fila */
+      grid-row: 2; /* Lo coloca en la segunda fila */
+      justify-self: center; /* Centra el texto */
+      font-size: 1.7rem; /* Tamaño de fuente grande */
+      font-weight: bold; /* Peso de la fuente en negrita */
+      color: #ff8fc7; /* Color rosado */
+      background-color: #ddd; /* Fondo gris claro */
+      padding: 5px 15px; /* Espaciado interno */
+      border-radius: 1em; /* Bordes redondeados */
+      text-align: center; /* Centra el texto */
+    }
+  
+    /* Estilo para los botones dentro del contenedor de rango */
+    .contenedor-rango .icon-btn {
+      background-color: #ff8fc7; /* Fondo rosado */
+      border: none; /* Elimina el borde */
+      border-radius: 50%; /* Hace los botones redondos */
+      width: 40px; /* Tamaño del botón */
+      height: 40px; /* Tamaño del botón */
+      font-size: 1.6rem; /* Tamaño de la fuente */
+      color: white; /* Texto blanco */
+      cursor: pointer; /* Muestra el cursor de puntero */
+      display: flex; /* Usa flexbox para centrar el icono */
+      align-items: center; /* Centra el icono verticalmente */
+      justify-content: center; /* Centra el icono horizontalmente */
+      transition: background-color 0.3s; /* Transición al cambiar el color de fondo */
+    }
+  
+  
+/* Estilo para el botón de "menos" */
+#menos {
+    grid-column: 1; /* Coloca el botón en la primera columna */
+    grid-row: 1; /* Coloca el botón en la primera fila */
+  }
+  
+  /* Estilo para el control deslizante (slider) */
+  #rango-entrada {
+    grid-column: 2; /* Coloca el control deslizante en la segunda columna */
+    grid-row: 1; /* Coloca el control deslizante en la primera fila */
+    width: 100%; /* Hace que el control ocupe el 100% del espacio disponible */
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada de los sliders en WebKit */
+    appearance: none; /* Elimina la apariencia predeterminada en otros navegadores */
+    height: 8px; /* Establece la altura del control deslizante */
+    background: #ddd; /* Establece un fondo gris claro para el control deslizante */
+    border-radius: 5px; /* Redondea los bordes del control deslizante */
+    outline: none; /* Elimina el contorno (outline) del control deslizante */
+  }
+  
+  /* Estilo para el pulgar del control deslizante en navegadores WebKit */
+  #rango-entrada::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Elimina la apariencia predeterminada del pulgar en WebKit */
+    appearance: none; /* Elimina la apariencia predeterminada del pulgar */
+    width: 20px; /* Establece el ancho del pulgar */
+    height: 20px; /* Establece la altura del pulgar */
+    background: #ff8fc7; /* Establece un color de fondo rosado para el pulgar */
+    border-radius: 50%; /* Hace que el pulgar sea redondo */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el pulgar */
+  }
+  
+  /* Estilo para el pulgar del control deslizante en Firefox */
+  #rango-entrada::-moz-range-thumb {
+    width: 20px; /* Establece el ancho del pulgar */
+    height: 20px; /* Establece la altura del pulgar */
+    background: #ff8fc7; /* Establece un color de fondo rosado para el pulgar */
+    border-radius: 50%; /* Hace que el pulgar sea redondo */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el pulgar */
+    border: none; /* Elimina el borde del pulgar */
+  }
+  
+  /* Estilo para el botón de "más" */
+  #mas {
+    grid-column: 3; /* Coloca el botón en la tercera columna */
+    grid-row: 1; /* Coloca el botón en la primera fila */
+  }
+  
+  /* Estilo para el valor del rango */
+  #rango-salida {
+    grid-column: 1 / -1; /* Hace que el valor ocupe todas las columnas disponibles */
+    grid-row: 2; /* Coloca el valor en la segunda fila */
+    justify-self: center; /* Centra el valor horizontalmente */
+    font-size: 1.7rem; /* Establece el tamaño de la fuente del valor */
+    font-weight: bold; /* Pone el valor en negrita */
+    color: #ff8fc7; /* Establece el color rosado para el texto */
+    background-color: #ddd; /* Establece un fondo gris claro para el valor */
+    padding: 5px 15px; /* Añade relleno alrededor del valor */
+    border-radius: 1em; /* Redondea los bordes del valor */
+    text-align: center; /* Centra el texto */
+  }
+  
+  /* Estilo para los botones dentro del contenedor de rango */
+  .contenedor-rango .icon-btn {
+    background-color: #ff8fc7; /* Establece un fondo rosado para los botones */
+    border: none; /* Elimina los bordes de los botones */
+    border-radius: 50%; /* Hace que los botones sean redondos */
+    width: 40px; /* Establece el ancho de los botones */
+    height: 40px; /* Establece la altura de los botones */
+    font-size: 1.6rem; /* Establece el tamaño de la fuente de los botones */
+    color: white; /* Establece el color blanco para el texto dentro de los botones */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+    display: flex; /* Utiliza flexbox para alinear el contenido */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    transition: background-color 0.3s; /* Añade una transición suave al cambio de color de fondo */
+  }
+  }  /* Media query para pantallas con un ancho máximo de 600px */
+  @media (max-width: 600px) {
+    body {
+      padding: 1em 3%; /* Añade un relleno de 1em en la parte superior e inferior y 3% a los lados */
+    }
+  
+    /* Estilo para el título de la introducción */
+    .introduccion h3 {
+      font-size: 1rem; /* Ajusta el tamaño de la fuente a 1rem */
+    }
+  
+    /* Estilo para el contenedor del generador */
+    .generador {
+      grid-template-rows: auto; /* Define filas automáticas */
+    }
+  
+    /* Estilo para el nivel */
+    .nivel {
+      font-size: 1.4rem; /* Ajusta el tamaño de la fuente a 1.4rem */
+    }
+  
+    /* Estilo para el contenedor de los inputs */
+    .contenedorInput {
+      flex-direction: column; /* Cambia la dirección de los elementos a columna */
+      align-items: center; /* Centra los elementos horizontalmente */
+      height: auto; /* Ajusta la altura automáticamente */
+      padding: 0.5em; /* Añade un relleno de 0.5em */
+    }
+  
+    /* Estilo para el input de contraseña */
+    .inputContrasena {
+      width: 100%; /* Hace que el input ocupe todo el ancho disponible */
+      margin-bottom: 0.5em; /* Añade un margen en la parte inferior */
+      font-size: 1em; /* Ajusta el tamaño de la fuente a 1em */
+    }
+  
+    /* Estilo para los botones */
+    .botones {
+      width: 100%; /* Hace que los botones ocupen todo el ancho disponible */
+      justify-content: center; /* Centra los botones horizontalmente */
+    }
+  
+    /* Estilo para el contenido de personalización */
+    .personalizacionContenido {
+      gap: 1em; /* Añade un espacio de 1em entre los elementos */
+    }
+  
+    /* Estilo para el contenedor de personalización */
+    .personalizacion {
+      padding: 1em; /* Añade un relleno de 1em */
+    }
+  
+    /* Estilo para el subtítulo */
+    .subtitulo {
+      font-size: 1.4rem; /* Ajusta el tamaño de la fuente a 1.4rem */
+    }
+  
+    /* Estilo para el contenedor de características */
+    .caracteres {
+      display: grid; /* Usa grid para el contenedor */
+      grid-template-columns: 1fr 1fr; /* Define dos columnas de igual tamaño */
+      grid-template-rows: auto auto auto; /* Define tres filas automáticas */
+      gap: 10px; /* Añade un espacio de 10px entre los elementos */
+      width: 100%; /* Hace que el contenedor ocupe el 100% del ancho disponible */
+    }
+  
+    /* Estilo para las características dentro de caracteres */
+    .caracteres .caracteristica {
+      grid-column: 1 / -1; /* Hace que la característica ocupe toda la fila */
+      font-weight: 400; /* Establece el peso de la fuente a 400 (normal) */
+      font-style: italic; /* Establece el estilo de la fuente en cursiva */
+      font-size: 1.2em; /* Ajusta el tamaño de la fuente a 1.2em */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Hace que el texto ocupe todo el ancho disponible */
+      margin-bottom: 10px; /* Añade un margen en la parte inferior */
+    }
+  
+    /* Estilo para las opciones dentro de las características */
+    .caracteres .opciones {
+      display: flex; /* Usa flexbox para alinear los elementos */
+      align-items: center; /* Centra los elementos verticalmente */
+      justify-content: space-between; /* Coloca los elementos en los extremos */
+      background-color: rgba(255, 255, 255, 0.1); /* Establece un fondo con opacidad */
+      padding: 10px; /* Añade un relleno de 10px */
+      border-radius: 8px; /* Redondea los bordes con un radio de 8px */
+      transition: background-color 0.3s ease; /* Transición suave al cambiar el color de fondo */
+    }
+  
+    /* Estilo para el texto dentro de las opciones */
+    .opciones p {
+      font-size: 1rem; /* Ajusta el tamaño de la fuente a 1rem */
+    }
+  
+    /* Estilo para las características dentro de la longitud */
+    .longitud .caracteristica {
+      grid-column: 1 / -1; /* Hace que la característica ocupe toda la fila */
+      font-weight: 400; /* Establece el peso de la fuente a 400 (normal) */
+      font-style: italic; /* Establece el estilo de la fuente en cursiva */
+      font-size: 1.2em; /* Ajusta el tamaño de la fuente a 1.2em */
+      text-align: center; /* Centra el texto */
+      width: 100%; /* Hace que el texto ocupe todo el ancho disponible */
+      margin-bottom: 10px; /* Añade un margen en la parte inferior */
+    }
+  
+    /* Estilo para el contenedor de longitud */
+    .longitud {
+      grid-template-columns: 1fr; /* Define una sola columna */
+    }
+  
+    /* Estilo para el contenedor del rango */
+    .contenedor-rango {
+      display: grid; /* Usa grid para el contenedor */
+      grid-template-columns: auto 1fr auto; /* Define tres columnas, con la columna del medio ocupando el 100% */
+      grid-template-rows: auto auto; /* Define dos filas automáticas */
+      gap: 10px; /* Añade un espacio de 10px entre los elementos */
+      align-items: center; /* Centra los elementos verticalmente */
+      width: 100%; /* Hace que el contenedor ocupe el 100% del ancho disponible */
+      max-width: 500px; /* Establece un ancho máximo de 500px */
+      margin: 0 auto; /* Centra el contenedor horizontalmente */
+    }
+  
+    /* Estilo para el botón de "menos" */
+    #menos {
+      grid-column: 1; /* Coloca el botón en la primera columna */
+      grid-row: 1; /* Coloca el botón en la primera fila */
+    }
+  
+    /* Estilo para el control deslizante (slider) */
+    #rango-entrada {
+      grid-column: 2; /* Coloca el control deslizante en la segunda columna */
+      grid-row: 1; /* Coloca el control deslizante en la primera fila */
+      width: 100%; /* Hace que el control ocupe el 100% del espacio disponible */
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada en WebKit */
+      appearance: none; /* Elimina la apariencia predeterminada en otros navegadores */
+      height: 8px; /* Establece la altura del control deslizante */
+      background: #ddd; /* Establece un fondo gris claro */
+      border-radius: 5px; /* Redondea los bordes */
+      outline: none; /* Elimina el contorno del control deslizante */
+    }
+  
+    /* Estilo para el pulgar del control deslizante en WebKit */
+    #rango-entrada::-webkit-slider-thumb {
+      -webkit-appearance: none; /* Elimina la apariencia predeterminada del pulgar */
+      appearance: none; /* Elimina la apariencia predeterminada del pulgar */
+      width: 20px; /* Establece el ancho del pulgar */
+      height: 20px; /* Establece la altura del pulgar */
+      background: #ff8fc7; /* Establece el color de fondo del pulgar */
+      border-radius: 50%; /* Hace que el pulgar sea redondo */
+      cursor: pointer; /* Cambia el cursor cuando pasa sobre el pulgar */
+    }
+  
+    /* Estilo para el pulgar del control deslizante en Firefox */
+    #rango-entrada::-moz-range-thumb {
+      width: 20px; /* Establece el ancho del pulgar */
+      height: 20px; /* Establece la altura del pulgar */
+      background: #ff8fc7; /* Establece el color de fondo del pulgar */
+      border-radius: 50%; /* Hace que el pulgar sea redondo */
+      cursor: pointer; /* Cambia el cursor cuando pasa sobre el pulgar */
+      border: none; /* Elimina el borde del pulgar */
+    }
+  
+    /* Estilo para el botón de "más" */
+    #mas {
+      grid-column: 3; /* Coloca el botón en la tercera columna */
+      grid-row: 1; /* Coloca el botón en la primera fila */
+    }
+  
+    /* Estilo para el valor del rango */
+    #rango-salida {
+      grid-column: 1 / -1; /* Hace que el valor ocupe todas las columnas disponibles */
+      grid-row: 2; /* Coloca el valor en la segunda fila */
+      justify-self: center; /* Centra el valor horizontalmente */
+      font-size: 1.7rem; /* Ajusta el tamaño de la fuente del valor */
+      font-weight: bold; /* Pone el valor en negrita */
+      color: #ff8fc7; /* Establece el color rosado para el texto */
+      background-color: #ddd; /* Establece un fondo gris claro para el valor */
+      padding: 5px 15px; /* Añade relleno alrededor del valor */
+      border-radius: 1em; /* Redondea los bordes del valor */
+      text-align: center; /* Centra el texto */
+    }
+  
+    /* Estilo para los botones dentro del contenedor de rango */
+    .contenedor-rango .icon-btn {
+      background-color: #ff8fc7; /* Establece un fondo rosado para los botones */
+      border: none; /* Elimina los bordes de los botones */
+      border-radius: 50%; /* Hace los botones redondos */
+      width: 40px; /* Establece el ancho del botón */
+      height: 40px; /* Establece la altura del botón */
+      font-size: 1.6rem; /* Ajusta el tamaño de la fuente dentro del botón */
+      color: white; /* Establece el color del texto a blanco */
+      cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
+      display: flex; /* Usa flexbox para alinear los elementos dentro del botón */
+      align-items: center; /* Centra los elementos verticalmente */
+      justify-content: center; /* Centra los elementos horizontalmente */
+      transition: background-color 0.3s; /* Añade una transición suave al cambiar el color de fondo */
+    }
+  }
+  
+  /* Media query para pantallas con un ancho máximo de 400px */
+  @media (max-width: 400px) {
+    /* Estilo para el título */
+    .titulo {
+      font-size: 1.2rem; /* Ajusta el tamaño de la fuente a 1.2rem */
+    }
+  
+    /* Estilo para el título de la introducción */
+    .introduccion h3 {
+      font-size: 0.9rem; /* Ajusta el tamaño de la fuente a 0.9rem */
+    }
+  
+    /* Estilo para el nivel */
+    .nivel {
+      font-size: 1.2rem; /* Ajusta el tamaño de la fuente a 1.2rem */
+    }
+  
+    /* Estilo para el subtítulo */
+    .subtitulo {
+      font-size: 1.2rem; /* Ajusta el tamaño de la fuente a 1.2rem */
+    }
+  
+    /* Estilo para los checkboxes dentro de las opciones */
+    .opciones input[type="checkbox"] {
+      width: 1.5em; /* Ajusta el tamaño del checkbox a 1.5em */
+      height: 1.5em; /* Ajusta la altura del checkbox a 1.5em */
+    }
+  
+    /* Estilo para la nota */
+    #nota {
+      font-size: 0.7em; /* Ajusta el tamaño de la fuente a 0.7em */
+    }
+  }
+  
